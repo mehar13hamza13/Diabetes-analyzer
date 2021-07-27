@@ -1,0 +1,61 @@
+{% load static %}
+{% include './includes/header.html' %}
+<style>
+	.col-sm-6{
+		margin-top: 4%;
+		border:2px rgb(202, 202, 202) solid;
+		border-radius: 10px;
+	}
+	.form-control{
+		margin: 15px auto;
+	}
+	.btn{
+		align-self: center;
+	}
+	h1{
+		text-align: center;
+		margin: 15px auto;
+	}
+</style>
+
+<div class="container">
+	<form class="form" action="{% url 'results' %}" method="POST">
+		{% csrf_token %}
+		<div class="row">
+			<div class="col-sm-3"></div>
+			<div class="col-sm-6">
+				<div>
+					<h1>Enter Your Details</h1>
+				</div>
+				<div>
+					<input type="number" class="form-control" name="pregnancy" id="pregnancy" placeholder="Pregnancy">
+				</div>
+				<div>
+					<input type="number" class="form-control" id="glucose" name="glucose" placeholder="Glucose">
+				</div>
+				<div>
+					<input type="number" class="form-control" id="bloodPressure" name="bloodPressure" placeholder="Blood Pressure">
+				</div>
+				<div>
+					<input type="number" class="form-control" id="skinThickness" name="skinThickness" placeholder="Skin Thickness">
+				</div>
+				<div>
+					<input type="number" class="form-control" id="insulin" name="insulin" placeholder="Insulin">
+				</div>
+				<div>
+					<input type="number" step="0.001" class="form-control" id="bmi" name="bmi" placeholder="BMI">
+				</div>
+				<div>
+					<input type="number" step="0.001" class="form-control" id="diabetes" name="diabetes" placeholder="Diabetes">
+				</div>
+				<div>
+					<input type="number" class="form-control" id="age" name="age" placeholder="Age">
+				</div>
+				<div class="d-grid gap-2 col-6 mx-auto">
+					<input type="submit" class="btn btn-primary mb-3" name="Submit">
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+{% include './includes/footer.html' %}

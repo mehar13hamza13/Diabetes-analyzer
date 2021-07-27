@@ -1,0 +1,32 @@
+{% load static %}
+{% include './includes/header.html' %}
+<style>
+	.col-sm-6{
+		margin-top: 4%;
+		border:2px rgb(202, 202, 202) solid;
+		border-radius: 10px;
+	}
+	.form-control{
+		margin: 15px auto;
+	}
+	.btn{
+		align-self: center;
+	}
+	h1{
+		text-align: center;
+		margin: 15px auto;
+	}
+</style>
+
+<div class="container">
+		<div class="row">
+			<div class="col-sm-3"></div>
+			<div class="col-sm-6 text-center">
+                <h2>Your Result</h2>
+
+				<p>Your result is: {% if result == 1 %} <span style="color:red">positive</span> {% else %} <span style="color:green">negative</span> {% endif %}</p>
+			</div>
+		</div>
+
+</div>
+{% include './includes/footer.html' %}
